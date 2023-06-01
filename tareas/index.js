@@ -4,14 +4,7 @@ const Tarea = require("./Tarea");
 module.exports = {
   tareas: leerJSON(),
   listar: require('./listar'),
-  agregar: function (clase, titulo) {
-    const tareas = this.tareas;
-    let tarea = new Tarea(clase, titulo);
-
-    tareas.push(tarea);
-    escribirJSON(tareas);
-    return `La tarea ${tarea.titulo} de la clase ${tarea.clase} se agregó exitosamente.`;
-  },
+  agregar: require('./agregar'),
   filtrar: function (estado) {
     const tareasFiltradas = this.tareas.filter(
       (tarea) => tarea.estado === estado
