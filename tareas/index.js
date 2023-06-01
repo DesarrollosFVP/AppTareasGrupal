@@ -3,11 +3,7 @@ const Tarea = require("./Tarea");
 
 module.exports = {
   tareas: leerJSON(),
-  listar: function (tareas = this.tareas) {
-    tareas.forEach(({ clase, titulo, estado }) => {
-      console.log(`CLASE: ${clase}: ${titulo} --> ${estado}`);
-    });
-  },
+  listar: require('./listar'),
   agregar: function (clase, titulo) {
     const tareas = this.tareas;
     let tarea = new Tarea(clase, titulo);
